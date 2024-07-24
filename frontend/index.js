@@ -24,6 +24,7 @@ const getBalance = async () => {
 
 document.getElementById("transactions-view").style.display = "none";
 
+// If user is logged in
 if (localStorage.getItem("token")) {
   (async () => {
     await getBalance();
@@ -86,6 +87,7 @@ const submitTransaction = async (mode) => {
 
 
 const showTransactions = async () => {
+  // Hide main view and show the transaction list
   document.getElementById("main-view").style.display = "none";
   document.getElementById("transactions-view").style.display = "initial";
   document.getElementsByClassName("loading-transactions")[0].textContent = '...';
@@ -98,6 +100,8 @@ const showTransactions = async () => {
     }
   });
   const res = await response.json();
+
+  // Error Handling
   if (response.status != 200 || !res.transactions) {
     document.getElementsByClassName("error-transactions")[0].textContent = 'Error while fetching transactions';
     return;
@@ -108,6 +112,7 @@ const showTransactions = async () => {
     document.getElementsByClassName("error-transactions")[0].textContent = 'No transactions yet';
   }
   
+  // Populate the list of transactions
   res.transactions.forEach(txn => {
     const txnDiv = createTransactionElement(txn.type, txn.amount)
     document.getElementById("txn-list").appendChild(txnDiv);

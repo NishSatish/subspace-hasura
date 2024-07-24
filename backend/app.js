@@ -20,7 +20,7 @@ const headers = {
   'content-type': 'application/json'
 }
 
-
+// Signup Route
 app.post('/signup', async (req, res) => {
   const {username, pwd} = req.body;
   try {
@@ -32,6 +32,7 @@ app.post('/signup', async (req, res) => {
   }
 });
 
+// Login Route
 app.post('/login', async (req, res) => {
   const {username, pwd} = req.body;
   try {
@@ -50,6 +51,7 @@ app.post('/login', async (req, res) => {
 });
 
 
+// Withdraw/Deposit Routes
 app.post('/transact', verifyToken, async (req, res) => {
   const username = req.user;
   const { type, amount } = req.body;
@@ -83,6 +85,7 @@ app.post('/transact', verifyToken, async (req, res) => {
   
 })
 
+// Fetch Balance Route
 app.get('/balance', verifyToken, async (req, res) => {
   const username = req.user;
   try {
@@ -97,6 +100,7 @@ app.get('/balance', verifyToken, async (req, res) => {
   }
 });
 
+// Fetch Transactions Route
 app.get('/transactions', verifyToken, async (req, res) => {
   const username = req.user;
   try {
