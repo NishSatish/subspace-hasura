@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="./login.css">
+  <title>SubSpace Task</title>
+  <script>
+    (() => {
+      if (localStorage.getItem("token")) {
+        window.location.href = '../index.html';
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="app-container">
+      <div class="header">Login to your account</div>
+      <div class="form">
+        <div id="name">
+          <input type="text" id="username" class="inputs username" placeholder="Username" />
+          <div class="formerror"></div>
+        </div>
+        <div id="password1">
+          <input type="password" id="password" class="inputs password" placeholder="Password" /><br />
+          <div class="formerror"></div>
+        </div>
+        <button class="btn-1" onclick="check()">sign in</button>
+        <div class="alternate">
+          <a href="../signup/signup.html">
+            Create an account
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./login.js"></script>
+
+</html>

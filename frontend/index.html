@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>SubSpace Task</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="app-container" id="main-view">
+      <div class="header">Withdraw/Deposit</div>
+      <div class="auth-buttons" id="auth-buttons">
+        <button class="auth-btn">
+          <a href="./login/login.html">login</a>
+        </button>
+        <button class="auth-btn">
+          <a href="./signup/signup.html">signup</a>
+        </button>
+      </div>
+      <div class="content" id="content">
+
+      </div>
+    </div>
+
+    <div class="app-container" id="transactions-view">
+      <div class="header">Transactions</div>
+      <div class="signout">
+        <a href="#" onclick="hideTransactions()">Back</a>
+      </div>
+      <div class="content" id="txn-list">
+        <div class="loading-transactions"></div>
+        <div class="error-transactions"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
