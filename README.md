@@ -5,7 +5,7 @@
   * The backend directory have package.json files. Run 'npm install' in both directories
   * The backend is hardcoded to run on port 9000. Run 'npm run start' in the backend directory to start the server
   * Serve the static frontend with any dev server. I've used the Live Server in VSC for ease
-  * Environment variables will be shared in private if required
+  * Environment variables will be shared in private if required. Rename .env.example to .env
   
 ## Design Choices
   I decided to use the express app to call all of the queries that are prebuilt on Hasura Cloud. Consider it a proxied frontend. I've implemented basic JWT 
